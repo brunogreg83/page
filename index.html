@@ -649,9 +649,36 @@
   </div>
   <div class="footer-bottom">
     <p class="footer-copy">© 2025 <span>Atuante Indústria Química</span>. Todos os direitos reservados.</p>
-    <p class="footer-copy">CNPJ 00.000.000/0001-00 · ANVISA Autorizado</p>
+    <p class="footer-copy">CNPJ 03.255.203/0001-17 · ANVISA Autorizado</p>
   </div>
 </footer>
+
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<a href="https://wa.me/5543988712001" target="_blank" id="whatsapp-float" title="Fale conosco no WhatsApp"
+  style="
+    position:fixed; bottom:28px; right:28px; z-index:999;
+    width:60px; height:60px; border-radius:50%;
+    background:linear-gradient(135deg,#25d366,#1da851);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 24px rgba(37,211,102,.45);
+    text-decoration:none;
+    animation:waPulse 2.5s ease-in-out infinite;
+    transition:transform .2s, box-shadow .2s;
+  "
+  onmouseover="this.style.transform='scale(1.12)';this.style.boxShadow='0 10px 32px rgba(37,211,102,.6)'"
+  onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 6px 24px rgba(37,211,102,.45)'"
+>
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12.05 2C6.495 2 2 6.495 2 12.05c0 1.862.507 3.603 1.383 5.1L2 22l4.984-1.305A10.003 10.003 0 0012.05 22C17.605 22 22 17.505 22 11.95 22 6.395 17.605 2 12.05 2zm0 18.201a8.17 8.17 0 01-4.17-1.144l-.299-.177-3.088.809.823-3.008-.195-.309A8.2 8.2 0 013.8 11.95c0-4.55 3.7-8.25 8.25-8.25s8.25 3.7 8.25 8.25-3.7 8.251-8.25 8.251z"/>
+  </svg>
+</a>
+<style>
+  @keyframes waPulse {
+    0%,100% { box-shadow:0 6px 24px rgba(37,211,102,.45), 0 0 0 0 rgba(37,211,102,.4); }
+    50% { box-shadow:0 6px 24px rgba(37,211,102,.45), 0 0 0 12px rgba(37,211,102,0); }
+  }
+</style>
 
 <script>
   const observer = new IntersectionObserver((entries) => {
