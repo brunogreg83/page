@@ -364,24 +364,99 @@
     </div>
   </div>
   <div class="hero-visual">
-    <div class="hero-circle-wrap">
-      <div class="hero-circle-bg"></div>
-      <div class="hero-ring-outer"><div class="hero-ring-dot"></div></div>
-      <div class="hero-icon-center">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
-          <polygon points="50,8 75,82 25,82" stroke="#2a9d4e" stroke-width="2" fill="rgba(42,157,78,.08)"/>
-          <polygon points="50,8 70,82 50,68" fill="#2a9d4e" opacity=".9"/>
-          <polygon points="50,8 30,82 50,68" fill="#d4f0dc" stroke="#2a9d4e" stroke-width="1"/>
-          <ellipse cx="50" cy="74" rx="10" ry="13" fill="none" stroke="#2bbcd4" stroke-width="1.5"/>
-          <line x1="43" y1="70" x2="57" y2="70" stroke="#2bbcd4" stroke-width="1"/>
-        </svg>
-        <p>ATUANTE</p>
+    <div id="hero-stats-panel">
+      <!-- Card principal -->
+      <div class="hsp-main">
+        <div class="hsp-logo">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="54" height="54">
+            <circle cx="40" cy="40" r="38" stroke="#2a9d4e" stroke-width="2"/>
+            <polygon points="40,10 65,65 15,65" fill="none" stroke="#2a9d4e" stroke-width="2"/>
+            <polygon points="40,10 58,65 40,55" fill="#2a9d4e"/>
+            <polygon points="40,10 22,65 40,55" fill="#d4f0dc" stroke="#2a9d4e" stroke-width="1"/>
+            <ellipse cx="40" cy="57" rx="7" ry="9" fill="none" stroke="#2a9d4e" stroke-width="1.5"/>
+            <line x1="36" y1="55" x2="44" y2="55" stroke="#2a9d4e" stroke-width="1"/>
+          </svg>
+          <div>
+            <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.1rem;color:var(--green);">Atuante</div>
+            <div style="font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);">Indústria Química</div>
+          </div>
+        </div>
+        <div class="hsp-divider"></div>
+        <p style="font-size:.85rem;color:var(--text-muted);line-height:1.6;text-align:center;max-width:260px;">Referência em limpeza profissional no Paraná</p>
       </div>
-      <div class="hero-fb b1"><span class="dot"></span>ANVISA Certificado</div>
-      <div class="hero-fb b2"><span class="dot"></span>Entrega Rápida</div>
-      <div class="hero-fb b3"><span class="dot" style="background:var(--blue)"></span>Suporte Técnico</div>
+
+      <!-- Grid de números -->
+      <div class="hsp-grid">
+        <div class="hsp-card hsp-card--green">
+          <div class="hsp-icon">🏢</div>
+          <div class="hsp-number"><span class="counter" data-target="500">0</span><span class="hsp-plus">+</span></div>
+          <div class="hsp-label">Clientes Ativos</div>
+        </div>
+        <div class="hsp-card hsp-card--blue">
+          <div class="hsp-icon">🧴</div>
+          <div class="hsp-number"><span class="counter" data-target="80">0</span><span class="hsp-plus">+</span></div>
+          <div class="hsp-label">Produtos</div>
+        </div>
+        <div class="hsp-card hsp-card--teal">
+          <div class="hsp-icon">📅</div>
+          <div class="hsp-number"><span class="counter" data-target="27">0</span></div>
+          <div class="hsp-label">Anos de Mercado</div>
+        </div>
+        <div class="hsp-card hsp-card--light">
+          <div class="hsp-icon">🌿</div>
+          <div class="hsp-number"><span class="counter" data-target="100">0</span><span class="hsp-plus">%</span></div>
+          <div class="hsp-label">Satisfação Garantida</div>
+        </div>
+      </div>
+
+      <!-- Badge ANVISA -->
+      <div class="hsp-badge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2a9d4e" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span>Certificado ANVISA · Entrega em todo o Paraná</span>
+      </div>
     </div>
   </div>
+
+  <style>
+    #hero-stats-panel {
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+      width: 100%; max-width: 420px;
+    }
+    .hsp-main {
+      background: var(--white); border-radius: 24px; padding: 24px 28px;
+      box-shadow: 0 8px 40px rgba(42,157,78,.13); border: 1.5px solid rgba(42,157,78,.12);
+      width: 100%; display: flex; flex-direction: column; align-items: center; gap: 14px;
+      animation: fadeUp .6s .3s ease both;
+    }
+    .hsp-logo { display: flex; align-items: center; gap: 12px; }
+    .hsp-divider { width: 60px; height: 2px; background: linear-gradient(90deg, var(--green), var(--blue)); border-radius: 2px; }
+    .hsp-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%;
+      animation: fadeUp .6s .4s ease both;
+    }
+    .hsp-card {
+      border-radius: 18px; padding: 20px 16px;
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      transition: transform .25s, box-shadow .25s;
+      cursor: default;
+    }
+    .hsp-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(42,157,78,.15); }
+    .hsp-card--green { background: linear-gradient(135deg, #e8f8ee, #d0f0dc); border: 1.5px solid rgba(42,157,78,.18); }
+    .hsp-card--blue  { background: linear-gradient(135deg, #e6f9fc, #c8f0f7); border: 1.5px solid rgba(43,188,212,.2); }
+    .hsp-card--teal  { background: linear-gradient(135deg, #e0f7f4, #c0ede8); border: 1.5px solid rgba(20,180,160,.2); }
+    .hsp-card--light { background: linear-gradient(135deg, #f0f8ff, #dceeff); border: 1.5px solid rgba(43,120,212,.18); }
+    .hsp-icon { font-size: 1.4rem; }
+    .hsp-number { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: 2.2rem; color: var(--text); line-height: 1; display: flex; align-items: flex-end; gap: 1px; }
+    .hsp-plus { font-size: 1.4rem; font-weight: 900; color: var(--green); line-height: 1.4; }
+    .hsp-label { font-size: .72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); text-align: center; }
+    .hsp-badge {
+      background: var(--white); border-radius: 50px; padding: 10px 20px;
+      display: flex; align-items: center; gap: 8px;
+      box-shadow: 0 4px 16px rgba(42,157,78,.12); border: 1.5px solid rgba(42,157,78,.15);
+      font-size: .78rem; font-weight: 700; color: var(--text-muted);
+      animation: fadeUp .6s .5s ease both;
+    }
+  </style>
 </section>
 
 <!-- WAVE -->
@@ -681,6 +756,27 @@
 </style>
 
 <script>
+  // Contadores animados
+  const counters = document.querySelectorAll('.counter');
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-target'));
+        const duration = 1800;
+        const step = target / (duration / 16);
+        let current = 0;
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) { current = target; clearInterval(timer); }
+          el.textContent = Math.floor(current);
+        }, 16);
+        countObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => countObserver.observe(c));
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12 });
